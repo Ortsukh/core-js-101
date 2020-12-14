@@ -201,17 +201,13 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  let a = '';
-  for (let i = 0; i <= height - 1; i++) {
-    if (i === 0) {
-      a += `┌${'─'.repeat(width - 2)}┐\n`;
-    } else if (i < height - 1) {
-      a += `│${' '.repeat(width - 2)}|\n`;
-    } else {
-      a += `└${'─'.repeat(width - 2)}┘\n`;
-    }
+  let result = '';
+  for (let i = 0; i < height; i++) {
+    if (i === 0) result += `┌${'─'.repeat(width - 2)}┐\n`;
+    if (i !== 0 && i !== height - 1) result += `│${' '.repeat(width - 2)}│\n`;
+    if (i === height - 1) result += `└${'─'.repeat(width - 2)}┘\n`;
   }
-  return a;
+  return result;
 }
 /**
  * Encode specified string with ROT13 cipher
