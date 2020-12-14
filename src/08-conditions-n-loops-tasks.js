@@ -191,23 +191,10 @@ function findFirstSingleChar(str) {
   let b = '';
   for (let i = 0; i < arr.length; i++) {
     const newarr = arr.filter((el) => el === arr[i]);
-    console.log(newarr);
     if (newarr.length === 1) {
       b += arr[i];
     }
   }
-  //   a = 0;
-  //   arr.forEach((elem, index) => {
-  //     if (arr[i] === elem) {
-  //       console.log(elem);
-  //       a++;
-  //     }
-  //     if (index === arr.length - 1 && a === 1) {
-  //       console.log(arr[i]);
-  //       b += arr[i];
-  //     }
-  //   });
-  // }
   if (b === '') {
     return null;
   }
